@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Play Rock Paper Scissor</title>
+</head>
+<body>
+    <script>
+        function getComputerChoice() {
+            let choice = Math.floor(Math.random()*3);
+
+            if (choice == 0) {
+                return('rock');
+            } else if (choice == 1) {
+                return('paper');
+            } else {
+                return('scissor');
+            }
+        }
+
+        computerSelection = getComputerChoice();
+
+        function getPlayerChoice() {
+            let guess = prompt('Rock, Paper, Scissor!', '');
+            guessCorrection = guess.toLowerCase();
+            return (guessCorrection);
+            console.log(guessCorrection);
+        }
+
+        playerSelection = getPlayerChoice();
+
+        function RockPaperScissor(computerSelection, playerSelection) {
+            if (computerSelection === playerSelection) {
+                console.log("It's a draw, you both choose " + playerSelection);
+            } else if (playerSelection === 'rock' && computerSelection === 'paper'){
+                console.log('You lose! Paper beats rock');
+            } else if (playerSelection === 'rock' && computerSelection === 'scissor') {
+                console.log('You win! Rock beats scissor');
+            } else if (playerSelection === 'paper' && computerSelection === 'scissor') {
+                console.log('You lose! Scissor beats paper');
+            } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+                console.log('You win! Paper beats rock');
+            } else if (playerSelection === 'Scissor' && computerSelection === 'rock') {
+                console.log('You lose! Rock beats scissor');
+            } else {
+                console.log('You win! Scissor beats paper');
+            }
+            }
+
+            RockPaperScissor(computerSelection, playerSelection);
+        
+
+    </script>
+</body>
+</html>
