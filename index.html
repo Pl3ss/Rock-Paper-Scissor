@@ -20,8 +20,6 @@
             }
         }
 
-        computerSelection = getComputerChoice();
-
         function getPlayerChoice() {
             let guess = prompt('Rock, Paper, Scissor!', '');
             guessCorrection = guess.toLowerCase();
@@ -29,29 +27,36 @@
             console.log(guessCorrection);
         }
 
-        playerSelection = getPlayerChoice();
+       
 
         function RockPaperScissor(computerSelection, playerSelection) {
+
             if (computerSelection === playerSelection) {
-                console.log("It's a draw, you both choose " + playerSelection);
+                return("It's a draw, you both choose " + playerSelection);
             } else if (playerSelection === 'rock' && computerSelection === 'paper'){
-                console.log('You lose! Paper beats rock');
+                return('You lose! Paper beats rock');
             } else if (playerSelection === 'rock' && computerSelection === 'scissor') {
-                console.log('You win! Rock beats scissor');
+                return('You win! Rock beats scissor');
             } else if (playerSelection === 'paper' && computerSelection === 'scissor') {
-                console.log('You lose! Scissor beats paper');
+                return('You lose! Scissor beats paper');
             } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-                console.log('You win! Paper beats rock');
+                return('You win! Paper beats rock');
             } else if (playerSelection === 'Scissor' && computerSelection === 'rock') {
-                console.log('You lose! Rock beats scissor');
+                return('You lose! Rock beats scissor');
             } else {
-                console.log('You win! Scissor beats paper');
+                return('You win! Scissor beats paper');
             }
             }
 
-            RockPaperScissor(computerSelection, playerSelection);
-        
+        function game() {
+            for (let i = 0; i < 5; i++) {
+                playerSelection = getPlayerChoice();
+                computerSelection = getComputerChoice();
+                console.log(RockPaperScissor(computerSelection, playerSelection));
+            }
+        }   
 
+        game();
     </script>
 </body>
 </html>
