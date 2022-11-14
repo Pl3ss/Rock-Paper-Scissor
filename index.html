@@ -5,58 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's Play Rock Paper Scissor</title>
+    <script src="rock-paper-scissor.js" defer></script>
 </head>
 <body>
-    <script>
-        function getComputerChoice() {
-            let choice = Math.floor(Math.random()*3);
+    <button onclick="RockPaperScissor(getComputerChoice(), getPlayerChoice(this)); scoreCheck()" id="rock">Rock</button>
+    <button onclick="RockPaperScissor(getComputerChoice(), getPlayerChoice(this)); scoreCheck()" id="paper">Paper</button>
+    <button onclick="RockPaperScissor(getComputerChoice(), getPlayerChoice(this)); scoreCheck()" id="scissor">Scissor</button>
+   
+    <div id="result"></div>
+    <div id="score"></div>
+    <div id="winner"></div>
 
-            if (choice == 0) {
-                return('rock');
-            } else if (choice == 1) {
-                return('paper');
-            } else {
-                return('scissor');
-            }
-        }
-
-        function getPlayerChoice() {
-            let guess = prompt('Rock, Paper, Scissor!', '');
-            guessCorrection = guess.toLowerCase();
-            return (guessCorrection);
-            console.log(guessCorrection);
-        }
-
+    <script> 
        
-
-        function RockPaperScissor(computerSelection, playerSelection) {
-
-            if (computerSelection === playerSelection) {
-                return("It's a draw, you both choose " + playerSelection);
-            } else if (playerSelection === 'rock' && computerSelection === 'paper'){
-                return('You lose! Paper beats rock');
-            } else if (playerSelection === 'rock' && computerSelection === 'scissor') {
-                return('You win! Rock beats scissor');
-            } else if (playerSelection === 'paper' && computerSelection === 'scissor') {
-                return('You lose! Scissor beats paper');
-            } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-                return('You win! Paper beats rock');
-            } else if (playerSelection === 'Scissor' && computerSelection === 'rock') {
-                return('You lose! Rock beats scissor');
-            } else {
-                return('You win! Scissor beats paper');
-            }
-            }
-
-        function game() {
-            for (let i = 0; i < 5; i++) {
-                playerSelection = getPlayerChoice();
-                computerSelection = getComputerChoice();
-                console.log(RockPaperScissor(computerSelection, playerSelection));
-            }
-        }   
-
-        game();
     </script>
 </body>
 </html>
